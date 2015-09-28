@@ -14,14 +14,14 @@ def restar(x, y):
     return x-y
 
 
-def find_float(sumando):
+def es_float(sumando):
     if '.' in sumando:
         return float(sumando)
     else:
         return int(sumando)
 
 
-def operacion_valida(operacion, numero1, numero2):
+def operando_valida(operacion, numero1, numero2):
     if operacion == 'suma':
         print(sumar(numero1, numero2))
     elif operacion == 'resta':
@@ -37,8 +37,8 @@ if __name__ == '__main__':
     operacion = sys.argv[2]
 
     try:
-        numero1 = find_float(sum1)
-        numero2 = find_float(sum2)
-        operacion_valida(operacion, numero1, numero2)
+        numero1 = es_float(sum1)
+        numero2 = es_float(sum2)
+        operando_valida(operacion, numero1, numero2)
     except ValueError:
         print('Error: Non numerical parameters')
