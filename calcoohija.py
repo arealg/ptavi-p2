@@ -18,18 +18,18 @@ class CalculadoraHija(calcoo.Calculadora):
         return x*y
 
 
-def mod_operacion(calc_operac, numero1, numero2):
-    solucion = calc_operac(numero1, numero2)
+def modo_operacion(modelo, numero1, numero2):
+    solucion = modelo(numero1, numero2)
     print (solucion)
 
 
-def operacion_valida(operando, numero1, numero2):
+def operando_valido(operando, numero1, numero2):
 
     calculo = CalculadoraHija()
-    op_val = {'suma': calculo.sumar, 'resta': calculo.restar,
+    libreria = {'suma': calculo.sumar, 'resta': calculo.restar,
               'multiplica': calculo.multiplicar, 'divide': calculo.dividir}
     try:
-        mod_operacion(op_val[operacion], numero1, numero2)
+        modo_operacion(libreria[operacion], numero1, numero2)
     except:
         print ('Error: Non operation parameters')
 
@@ -41,8 +41,8 @@ if __name__ == '__main__':
     operacion = sys.argv[2]
 
     try:
-        numero1 = calc.find_float(sum1)
-        numero2 = calc.find_float(sum2)
-        operacion_valida(operacion, numero1, numero2)
+        numero1 = calc.es_float(sum1)
+        numero2 = calc.es_float(sum2)
+        operando_valido(operacion, numero1, numero2)
     except ValueError:
         print ('Error: Non numerical parameters')
