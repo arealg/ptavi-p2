@@ -19,7 +19,7 @@ def modo_operacion(calc_operac, numero1, numero2):
     print (solucion)
 
 
-def operando_valida(operacion, numero1, numero2):
+def operando_valido(operacion, numero1, numero2):
     calculo = Calculadora()
     libreria = {'suma': calculo.sumar, 'resta': calculo.restar}
 
@@ -38,6 +38,6 @@ if __name__ == '__main__':
     try:
         numero1 = calc.es_float(sum1)
         numero2 = calc.es_float(sum2)
-        operando_valida(operacion, numero1, numero2)
+        operando_valido(operacion, numero1, numero2)
     except ValueError:
         print ('Error: Non numerical parameters')
