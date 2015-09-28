@@ -14,8 +14,8 @@ class Calculadora:
         return x-y
 
 
-def modo_operacion(calc_operac, numero1, numero2):
-    solucion = calc_operac(numero1, numero2)
+def modo_operacion(modelo, numero1, numero2):
+    solucion = modelo(numero1, numero2)
     print (solucion)
 
 
