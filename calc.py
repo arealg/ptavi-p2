@@ -21,7 +21,7 @@ def es_float(sumando):
         return int(sumando)
 
 
-def operando_valida(operacion, numero1, numero2):
+def operando_valido(operacion, numero1, numero2):
     if operacion == 'suma':
         print(sumar(numero1, numero2))
     elif operacion == 'resta':
@@ -39,6 +39,6 @@ if __name__ == '__main__':
     try:
         numero1 = es_float(sum1)
         numero2 = es_float(sum2)
-        operando_valida(operacion, numero1, numero2)
+        operando_valido(operacion, numero1, numero2)
     except ValueError:
         print('Error: Non numerical parameters')
