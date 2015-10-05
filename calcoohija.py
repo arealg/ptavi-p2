@@ -27,7 +27,7 @@ def operando_valido(operando, numero1, numero2):
 
     calculo = CalculadoraHija()
     libreria = {'suma': calculo.sumar, 'resta': calculo.restar,
-              'multiplica': calculo.multiplicar, 'divide': calculo.dividir}
+                'multiplica': calculo.multiplicar, 'divide': calculo.dividir}
     try:
         modo_operacion(libreria[operacion], numero1, numero2)
     except:
