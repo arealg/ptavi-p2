@@ -15,20 +15,23 @@ def restar(x, y):
 
 
 def es_float(sumando):
-    if '.' in sumando:
-        return float(sumando)
-    else:
-        return int(sumando)
+    try:
+        if '.' in sumando:
+            return float(sumando)
+        else:
+            return int(sumando)
+    except ValueError:
+        sys.exit('Error: Non numerical parameters')
 
 
 def operando_valido(operacion, numero1, numero2):
-    if operacion == 'suma':
-        print(sumar(numero1, numero2))
-    elif operacion == 'resta':
-        print(restar(numero1, numero2))
-    else:
-        print('Non operation parameters')
+    libreria = {'suma': sumar(numero1, numero2),
+                'resta': restar(numero1, numero2)}
 
+    try:
+        print (libreria[operacion])
+    except KeyError:
+        sys.exit('Error: Non operation parameter')
 
 if __name__ == '__main__':
 
@@ -36,9 +39,6 @@ if __name__ == '__main__':
     sum2 = sys.argv[3]
     operacion = sys.argv[2]
 
-    try:
-        numero1 = es_float(sum1)
-        numero2 = es_float(sum2)
-        operando_valido(operacion, numero1, numero2)
-    except ValueError:
-        print('Error: Non numerical parameters')
+    numero1 = es_float(sum1)
+    numero2 = es_float(sum2)
+    operando_valido(operacion, numero1, numero2)
