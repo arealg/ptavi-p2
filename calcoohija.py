@@ -11,17 +11,17 @@ class CalculadoraHija(calcoo.Calculadora):
     def __init__(self):
         super().__init__()
         self.libreria['divide'] = self.dividir
-        self.libreria['multiplica'] =  self.multiplicar
-
+        self.libreria['multiplica'] = self.multiplicar
 
     def multiplicar(self, x, y):
-        return x*y
+        return x * y
 
     def dividir(self, x, y):
         try:
-            return x/y
+            return x / y
         except ZeroDivisionError:
             sys.exit('Division by zero is not allowed')
+
 
 def operando_valido(operando, numero1, numero2):
     calculo = CalculadoraHija()
