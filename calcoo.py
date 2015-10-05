@@ -9,12 +9,11 @@ class Calculadora:
     def __init__(self):
         self.libreria = {'suma': self.sumar, 'resta': self.restar}
 
-
     def sumar(self, x, y):
-        return x+y
+        return x + y
 
     def restar(self, x, y):
-        return x-y
+        return x - y
 
 
 def modo_operacion(tipo_operacion, numero1, numero2):
