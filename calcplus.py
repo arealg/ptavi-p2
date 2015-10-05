@@ -15,13 +15,11 @@ def modo_operacion(lista2, modelo):
 def operando_valido(operador, lista2):
 
     calcular = calcoohija.CalculadoraHija()
-    libreria = {'suma': calcular.sumar, 'resta': calcular.restar,
-                'multiplica': calcular.multiplicar, 'divide': calcular.dividir}
 
     try:
-        modo_operacion(lista2, libreria[operador])
+        modo_operacion(lista2, calcular.libreria[operador])
     except KeyError:
-        print('Non operation parameter')
+        sys.exit('Error: Non operation parameter')
 
 
 if __name__ == '__main__':
