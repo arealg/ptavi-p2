@@ -5,7 +5,7 @@ import sys
 import calcoohija
 
 
-def modo_operacion(list, calcular, modelo):
+def modo_operacion(lista2, modelo):
     primero = int(lista2[1])
     for i in lista2[2:]:
         primero = modelo(primero, int(i))
@@ -16,10 +16,10 @@ def operando_valido(operador, lista2):
 
     calcular = calcoohija.CalculadoraHija()
     libreria = {'suma': calcular.sumar, 'resta': calcular.restar,
-              'multiplica': calcular.multiplicar, 'divide': calcular.dividir}
+                'multiplica': calcular.multiplicar, 'divide': calcular.dividir}
 
     try:
-        modo_operacion(lista2, calcular, libreria[operador])
+        modo_operacion(lista2, libreria[operador])
     except KeyError:
         print('Non operation parameter')
 
